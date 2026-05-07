@@ -85,12 +85,24 @@
 .chrome-icon:hover { color: #fff; background: #26221d; }
 .chrome-icon.is-active { color: var(--accent); background: #26221d; }
 .chrome-spacer { flex: 1; }
+.chrome-userblock {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  margin-bottom: 4px;
+}
 .chrome-avatar {
   width: 32px; height: 32px;
   border-radius: 50%;
   background: var(--accent);
   color: white; font-weight: 700; font-size: 11px;
   display: grid; place-items: center;
+}
+.chrome-plan {
+  font-size: 9px; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 2px 6px; border-radius: 999px;
+  background: linear-gradient(135deg, #ffb066, var(--accent));
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(217,72,10,.4);
 }
 .chrome-add {
   width: 36px; height: 36px;
