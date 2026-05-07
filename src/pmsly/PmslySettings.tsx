@@ -49,7 +49,7 @@ const SidebarOrg = ({
   const current = NAV.find((n) => n.id === section);
   const idx = NAV.findIndex((n) => n.id === section);
   return (
-    <div style={{ flex: 1, overflow: "auto", padding: "24px 40px 80px" }}>
+    <div className="settings-page">
       {showToolbar && <PageToolbar section={section} />}
       {!showToolbar && (
         <div style={{ marginBottom: 28 }}>
@@ -58,8 +58,8 @@ const SidebarOrg = ({
         </div>
       )}
 
-      <div style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: 32, alignItems: "flex-start" }}>
-        <div style={{ position: "sticky", top: 16 }}>
+      <div className="settings-grid">
+        <div className="settings-side">
           <div className="subnav">
             {NAV.map((n: NavItem) => (
               <button
@@ -143,7 +143,7 @@ const HubOrg = ({
     const Panel = PANELS[section] || ProfiloPanel;
     const current = NAV.find((n) => n.id === section);
     return (
-      <div style={{ flex: 1, overflow: "auto", padding: "24px 40px 80px" }}>
+      <div className="settings-page">
         {showToolbar && <PageToolbar section={section} />}
         <div style={{ marginBottom: 14 }}>
           <button className="btn btn-ghost btn-sm" onClick={() => setSection("hub")}>
@@ -162,7 +162,7 @@ const HubOrg = ({
   }
 
   return (
-    <div style={{ flex: 1, overflow: "auto", padding: "24px 40px 80px" }}>
+    <div className="settings-page">
       {showToolbar && <PageToolbar section={section} />}
       {!showToolbar && (
         <div style={{ marginBottom: 28 }}>
