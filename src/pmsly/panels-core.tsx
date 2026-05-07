@@ -40,23 +40,26 @@ export const PageToolbar = ({ section }: { section: string }) => {
 
 export const ProfiloPanel = () => (
   <div className="stack-lg">
-    <div className="hero">
-      <div className="hero-bg" />
-      <div className="hero-body">
-        <div className="avatar-lg">SL</div>
-        <div className="hero-name">
-          <h2>Salvatore Lo Piccolo</h2>
-          <div className="meta">
-            <Badge kind="accent" dot>Host</Badge>
-            <span className="sep" />
-            <span>salvatore@pmsly.com</span>
-            <span className="sep" />
-            <span>membro da Marzo 2024</span>
+    <div className="profile-card">
+      <div className="profile-card-bg" />
+      <div className="profile-card-body">
+        <div className="profile-identity">
+          <div className="avatar-lg">SL</div>
+          <div className="profile-info">
+            <h2>Salvatore Lo Piccolo</h2>
+            <div className="profile-tags">
+              <Badge kind="accent" dot>Host</Badge>
+              <Badge kind="ok">Piano Pro</Badge>
+            </div>
+            <div className="profile-meta">
+              <span className="profile-meta-item"><Icon name="user" size={13} /> salvatore@pmsly.com</span>
+              <span className="profile-meta-item"><Icon name="cal" size={13} /> Membro da Marzo 2024</span>
+            </div>
           </div>
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
+        <div className="profile-actions">
           <button className="btn btn-soft btn-sm"><Icon name="upload" size={14} /> Cambia avatar</button>
-          <button className="btn btn-ghost btn-sm"><Icon name="logout" size={14} /></button>
+          <button className="btn btn-logout btn-sm"><Icon name="logout" size={14} /> Esci</button>
         </div>
       </div>
     </div>

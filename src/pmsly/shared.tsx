@@ -42,7 +42,10 @@ export const AppRail = ({ active }: { active?: string }) => (
     <div className="chrome-spacer" />
     <div className="chrome-icon"><Icon name="globe" /></div>
     <div className="chrome-icon"><Icon name="sun-moon" /></div>
-    <div className="chrome-avatar">SL</div>
+    <div className="chrome-userblock">
+      <div className="chrome-avatar">SL</div>
+      <span className="chrome-plan">Pro</span>
+    </div>
     <div className="chrome-add"><Icon name="plus" size={18} /></div>
   </div>
 );
