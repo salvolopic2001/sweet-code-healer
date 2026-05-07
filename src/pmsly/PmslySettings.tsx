@@ -48,6 +48,13 @@ const SidebarOrg = ({
   const Panel = PANELS[section] || ProfiloPanel;
   const current = NAV.find((n) => n.id === section);
   const idx = NAV.findIndex((n) => n.id === section);
+  const [mobileView, setMobileView] = useState<"list" | "panel">("list");
+
+  const handleSelect = (id: string) => {
+    setSection(id);
+    setMobileView("panel");
+  };
+
   return (
     <div className="settings-page">
       {showToolbar && <PageToolbar section={section} />}
@@ -58,14 +65,14 @@ const SidebarOrg = ({
         </div>
       )}
 
-      <div className="settings-grid">
+      <div className="settings-grid" data-mobile-view={mobileView}>
         <div className="settings-side">
           <div className="subnav">
             {NAV.map((n: NavItem) => (
               <button
                 key={n.id}
                 className={"subnav-item" + (section === n.id ? " is-active" : "")}
-                onClick={() => setSection(n.id)}
+                onClick={() => handleSelect(n.id)}
               >
                 <span className="lead">
                   <span className="subnav-icon"><Icon name={n.icon} size={15} /></span>
@@ -93,7 +100,10 @@ const SidebarOrg = ({
           )}
         </div>
 
-        <div>
+        <div className="settings-main">
+          <button className="btn btn-ghost btn-sm settings-back" onClick={() => setMobileView("list")}>
+            <Icon name="chev-left" size={14} /> Torna alle impostazioni
+          </button>
           <div style={{ marginBottom: 14, display: "flex", alignItems: "center", gap: 10 }}>
             <span className="muted" style={{ fontSize: 12 }}>Impostazioni</span>
             <Icon name="chev-right" size={12} className="muted" />
