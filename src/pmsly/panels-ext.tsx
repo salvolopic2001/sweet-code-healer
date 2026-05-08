@@ -107,24 +107,24 @@ export const IntegrazioniPanel = () => (
 
 export const FatturazionePanel = () => (
   <div className="stack-lg">
-    <div className="card" style={{ background: "linear-gradient(135deg, #1a1714, #2d2520)", color: "#fff", border: 0 }}>
-      <div style={{ padding: 28, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-        <div>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#a8a098" }}>Piano corrente</div>
-          <div style={{ fontSize: 32, fontWeight: 800, marginTop: 4, display: "flex", alignItems: "center", gap: 12 }}>
-            Pro <span style={{ background: "var(--accent)", fontSize: 11, padding: "4px 10px", borderRadius: 6, letterSpacing: "0.08em" }}>ATTIVO</span>
+    <div className="plan-card">
+      <div className="plan-card-top">
+        <div className="plan-card-info">
+          <div className="plan-card-eyebrow">Piano corrente</div>
+          <div className="plan-card-title">
+            Pro <span className="plan-card-pill">ATTIVO</span>
           </div>
-          <div style={{ marginTop: 10, color: "#c4bcb0", fontSize: 13 }}>€39/mese · prossimo addebito 12 maggio 2026 · carta •• 4242</div>
+          <div className="plan-card-sub">€39/mese · prossimo addebito 12 maggio 2026 · carta •• 4242</div>
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
-          <button className="btn" style={{ background: "#fff", color: "#1a1714" }}>Upgrade a Premium</button>
-          <button className="btn" style={{ background: "rgba(255,255,255,.08)", color: "#fff" }}>Downgrade</button>
+        <div className="plan-card-actions">
+          <button className="btn plan-btn-light">Upgrade a Premium</button>
+          <button className="btn plan-btn-dark">Downgrade</button>
         </div>
       </div>
-      <div style={{ borderTop: "1px solid #3a342d", padding: 20, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-        <div><div style={{ fontSize: 11, color: "#a8a098", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700 }}>Proprietà</div><div style={{ fontSize: 22, fontWeight: 700, marginTop: 4 }}>3 / 10</div></div>
-        <div><div style={{ fontSize: 11, color: "#a8a098", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700 }}>Prenotazioni mese</div><div style={{ fontSize: 22, fontWeight: 700, marginTop: 4 }}>47 / ∞</div></div>
-        <div><div style={{ fontSize: 11, color: "#a8a098", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 700 }}>Storage</div><div style={{ fontSize: 22, fontWeight: 700, marginTop: 4 }}>2.1 / 50 GB</div></div>
+      <div className="plan-card-stats">
+        <div><div className="l">Proprietà</div><div className="v">3 / 10</div></div>
+        <div><div className="l">Prenotazioni mese</div><div className="v">47 / ∞</div></div>
+        <div><div className="l">Storage</div><div className="v">2.1 / 50 GB</div></div>
       </div>
     </div>
 
