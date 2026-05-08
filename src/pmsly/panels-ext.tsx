@@ -180,7 +180,7 @@ export const AlloggiatiPanel = () => (
       <button className="btn btn-soft btn-sm" style={{ marginLeft: "auto" }}>Cambia</button>
     </div>
 
-    <div className="stats" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+    <div className="stats" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}>
       <div className="stat"><div className="l">Configurate</div><div className="v" style={{ color: "var(--ok)" }}>2</div><div className="muted" style={{ fontSize: 12, marginTop: 8 }}>credenziali attive</div></div>
       <div className="stat"><div className="l">Mancanti</div><div className="v" style={{ color: "var(--warn)" }}>1</div><div className="muted" style={{ fontSize: 12, marginTop: 8 }}>1 proprietà senza credenziali</div></div>
       <div className="stat"><div className="l">Disattivate</div><div className="v" style={{ color: "var(--ink-3)" }}>0</div><div className="muted" style={{ fontSize: 12, marginTop: 8 }}>—</div></div>
