@@ -33,7 +33,7 @@ export const PageToolbar = ({ section }: { section: string }) => {
         <span>Tutto sincronizzato</span>
       </div>
       <button className="tb-iconbtn"><Icon name="sliders" size={15} /></button>
-      <button className="tb-cta"><Icon name="check" size={14} /> <span>Salva modifiche</span></button>
+      <button className="tb-cta"><Icon name="check" size={14} /> Salva modifiche</button>
     </div>
   );
 };

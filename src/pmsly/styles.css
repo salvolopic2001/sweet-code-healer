@@ -884,64 +884,6 @@
 .settings-side { position: sticky; top: 16px; }
 .settings-back { display: none; margin-bottom: 12px; }
 
-/* ── Plan card (Fatturazione hero) ────────────────────────── */
-.plan-card {
-  background: linear-gradient(135deg, #1a1714, #2d2520);
-  color: #fff;
-  border-radius: var(--r-xl);
-  overflow: hidden;
-}
-.plan-card-top {
-  padding: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.plan-card-info { min-width: 0; }
-.plan-card-eyebrow {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-  color: #a8a098;
-}
-.plan-card-title {
-  font-size: 32px; font-weight: 800; margin-top: 4px;
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-}
-.plan-card-pill {
-  background: var(--accent); color: #fff;
-  font-size: 11px; padding: 4px 10px; border-radius: 6px;
-  letter-spacing: .08em; font-weight: 700;
-}
-.plan-card-sub { margin-top: 10px; color: #c4bcb0; font-size: 13px; }
-.plan-card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-.plan-btn-light { background: #fff; color: #1a1714; }
-.plan-btn-dark { background: rgba(255,255,255,.08); color: #fff; }
-.plan-card-stats {
-  border-top: 1px solid #3a342d;
-  padding: 20px 28px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.plan-card-stats .l {
-  font-size: 11px; color: #a8a098;
-  text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
-}
-.plan-card-stats .v { font-size: 22px; font-weight: 700; margin-top: 4px; }
-
-/* ── Overflow safety ──────────────────────────────────────── */
-.card { overflow: hidden; }
-.card > .tbl { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.card > .tbl > thead, .card > .tbl > tbody { display: table; width: 100%; min-width: 600px; }
-.card-head h3, .card-head p { min-width: 0; overflow-wrap: anywhere; word-break: break-word; }
-.card-head > div:not(.ico) { min-width: 0; flex: 1; }
-.card-head .mono { word-break: break-all; }
-.input, .select, .textarea { min-width: 0; max-width: 100%; }
-.settings-main, .settings-side { min-width: 0; }
-
-/* ── Tablet (≤1024) ──────────────────────────────────────── */
 @media (max-width: 1024px) {
   .settings-page { padding: 20px 24px 64px; }
   .settings-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -950,144 +892,40 @@
   .stats { grid-template-columns: repeat(2, 1fr); }
   .input-grid { grid-template-columns: 1fr; }
   .input-grid.cols-3, .input-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
-  .input-grid > div:empty { display: none; }
+  .page-toolbar { flex-wrap: wrap; border-radius: 18px; padding: 10px 14px; }
+  .tb-spacer { display: none; }
   .profile-card-body {
     flex-direction: column;
     align-items: stretch;
     padding: 0 22px 22px;
   }
-  .profile-actions { justify-content: flex-start; flex-wrap: wrap; }
+  .profile-actions { justify-content: flex-start; }
   .hero-body { grid-template-columns: 1fr; text-align: left; }
-  .card-head { flex-wrap: wrap; }
-  .plan-card-top { padding: 22px; }
-  .plan-card-stats { padding: 18px 22px; gap: 16px; }
-  .plan-card-title { font-size: 26px; }
-  /* Compact toolbar on tablet */
-  .page-toolbar { padding: 8px 8px 8px 16px; gap: 8px; }
-  .page-toolbar h1.tb-title { font-size: 17px; }
-  .tb-pill { padding: 7px 12px; font-size: 12px; }
-  .tb-spacer { display: none; }
-  .tb-cta { padding: 9px 14px; font-size: 12px; }
 }
 
-/* ── Mobile drill-down (≤768) ────────────────────────────── */
+/* Mobile drill-down: list ↔ panel */
 @media (max-width: 768px) {
   .settings-grid[data-mobile-view="list"] .settings-main { display: none; }
   .settings-grid[data-mobile-view="panel"] .settings-side { display: none; }
   .settings-grid[data-mobile-view="panel"] .settings-back { display: inline-flex; }
 }
 
-/* ── Mobile (≤640) ───────────────────────────────────────── */
 @media (max-width: 640px) {
-  .settings-page { padding: 14px 12px 80px; }
-  .chrome { width: 52px; padding: 10px 0 8px; }
-  .chrome-icon, .chrome-add, .chrome-logo { width: 32px; height: 32px; font-size: 14px; }
-  .chrome-avatar { width: 32px; height: 32px; font-size: 11px; }
-  .chrome-plan { font-size: 8.5px; padding: 2px 6px; }
-  .chrome-userblock { padding: 6px 4px; gap: 4px; }
-
-  /* Compact rounded toolbar on mobile */
-  .page-toolbar {
-    border-radius: 16px;
-    padding: 8px 8px 8px 14px;
-    gap: 8px;
-    flex-wrap: nowrap;
-    margin-bottom: 16px;
-  }
-  .page-toolbar h1.tb-title { font-size: 16px; flex: 1; }
-  .page-toolbar .tb-pill,
-  .page-toolbar .tb-iconbtn { display: none; }
-  .page-toolbar .tb-pill.is-status { display: inline-flex; padding: 6px 10px; font-size: 11px; }
-  .page-toolbar .tb-pill.is-status span:not(.dot) { display: none; }
-  .page-toolbar .tb-cta { padding: 8px 14px; font-size: 12px; gap: 6px; }
-  .page-toolbar .tb-cta span { display: none; }
-
+  .settings-page { padding: 16px 14px 64px; }
+  .chrome { width: 56px; padding: 10px 0; }
+  .chrome-icon, .chrome-add { width: 32px; height: 32px; }
   .hub-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr; }
   .input-grid.cols-3, .input-grid.cols-4 { grid-template-columns: 1fr; }
   .h-display { font-size: 24px; }
-  .h-sub { font-size: 14px; }
-
-  /* Profile card */
-  .profile-card-body { padding: 0 18px 18px; gap: 16px; }
-  .profile-card-bg { height: 90px; }
   .profile-identity { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .profile-actions { flex-wrap: wrap; width: 100%; }
-  .profile-actions .btn { flex: 1; justify-content: center; }
-  .avatar-lg { width: 72px; height: 72px; font-size: 26px; border-radius: 18px; }
-  .profile-info h2 { font-size: 20px; }
-  .profile-meta { gap: 6px; flex-direction: column; font-size: 12px; }
-  .profile-tags .badge { font-size: 11px; padding: 4px 9px; }
-
-  /* Cards & inputs */
-  .card-head { padding: 14px 16px; gap: 10px; }
-  .card-head .ico { width: 34px; height: 34px; }
-  .card-head h3 { font-size: 15px; }
-  .card-head p { font-size: 12px; }
-  .card-body { padding: 16px; }
-  .card-body.tight { padding: 14px 16px; }
-  .input, .select, .textarea { padding: 11px 12px; font-size: 14px; }
-
-  /* Tables */
+  .profile-actions { flex-wrap: wrap; }
+  .avatar-lg { width: 78px; height: 78px; font-size: 28px; border-radius: 20px; }
+  .profile-info h2 { font-size: 21px; }
   .tbl th, .tbl td { padding: 10px 12px; font-size: 12px; }
-
-  /* Notifiche */
   .notif-row, .notif-col-head {
-    grid-template-columns: 1fr 56px 56px;
-    gap: 8px;
-    padding: 12px 14px;
+    grid-template-columns: 1fr auto auto !important;
+    gap: 10px;
   }
-  .notif-cat-head { padding: 12px 14px; }
-  .notif-cat-title { font-size: 13px; gap: 10px; }
-  .notif-cat-head > div:last-child .muted { display: none; }
-  .notif-row .desc { font-size: 11px; }
-
-  /* List rows (Profilo zona pericolosa, Sicurezza, Aspetto) */
-  .list-row { flex-direction: column; align-items: stretch; gap: 10px; padding: 14px 0; }
-  .list-row .btn { width: 100%; justify-content: center; }
-  .row-between { flex-wrap: wrap; gap: 12px; }
-  .row-between > .btn { width: 100%; justify-content: center; }
-
-  /* Plan card (Fatturazione) */
-  .plan-card-top { padding: 20px; flex-direction: column; align-items: flex-start; }
-  .plan-card-title { font-size: 22px; gap: 10px; }
-  .plan-card-actions { width: 100%; }
-  .plan-card-actions .btn { flex: 1; justify-content: center; }
-  .plan-card-stats {
-    grid-template-columns: 1fr;
-    padding: 16px 20px;
-    gap: 12px;
-  }
-  .plan-card-stats > div {
-    display: flex; align-items: baseline; justify-content: space-between;
-    padding: 6px 0; border-bottom: 1px solid #3a342d;
-  }
-  .plan-card-stats > div:last-child { border-bottom: 0; }
-  .plan-card-stats .v { margin-top: 0; font-size: 18px; }
-
-  /* Aspetto: tema selector */
-  .card-body > div[style*="grid-template-columns: repeat(3, 1fr)"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Mode banner */
-  .mode-banner { flex-wrap: wrap; padding: 12px 14px; font-size: 12px; }
-
-  /* Hub search */
-  .stack-xl { gap: 20px; }
-
-  /* Subnav (list) */
-  .subnav-item { padding: 12px 12px; font-size: 13px; }
-
-  /* Stats cards */
-  .stat { padding: 14px; }
-  .stat .v { font-size: 26px; }
-
-  /* Tile (hub) */
-  .tile { padding: 18px; }
-  .tile-arrow { top: 18px; right: 18px; }
-
-  /* Hide kbd shortcut on mobile */
-  .kbd-token { display: none; }
+  .card-head { flex-wrap: wrap; }
 }
-
