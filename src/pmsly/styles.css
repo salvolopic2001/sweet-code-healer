@@ -929,3 +929,7 @@
   }
   .card-head { flex-wrap: wrap; }
 }
+
+/* particle layer stacking */
+.app > .chrome, .app > .settings-page { position: relative; z-index: 1; }
+.chrome { background: rgba(255,255,255,0.78); backdrop-filter: blur(8px); }

@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import { Icon } from "./Icon";
+import pmslyLogo from "@/assets/pmsly-logo.png";
 
 export const Toggle = ({ on, onChange }: { on: boolean; onChange?: (v: boolean) => void }) => (
   <button
@@ -27,7 +28,9 @@ export const Badge = ({
 
 export const AppRail = ({ active }: { active?: string }) => (
   <div className="chrome">
-    <div className="chrome-logo">p</div>
+    <div className="chrome-logo" style={{ background: "transparent", padding: 0, overflow: "hidden" }}>
+      <img src={pmslyLogo} alt="PMSLY" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+    </div>
     <div className="chrome-icon"><Icon name="search" /></div>
     <div className="chrome-icon"><Icon name="grid" /></div>
     <div className="chrome-icon"><Icon name="cal" /></div>

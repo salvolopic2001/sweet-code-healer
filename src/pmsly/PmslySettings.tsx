@@ -10,6 +10,7 @@ import {
   AspettoPanel,
 } from "./panels-core";
 import { IntegrazioniPanel, FatturazionePanel, AlloggiatiPanel } from "./panels-ext";
+import { Particles } from "./Particles";
 import "./styles.css";
 
 const PANELS: Record<string, ComponentType> = {
@@ -241,7 +242,8 @@ export const PmslySettingsApp = ({
   const [section, setSection] = useState<string>(organization === "hub" ? "hub" : "profilo");
 
   return (
-    <div className="app" style={{ display: "flex", minHeight: "100vh" }}>
+    <div className="app" style={{ display: "flex", minHeight: "100vh", position: "relative" }}>
+      <Particles />
       <AppRail active="settings" />
       {organization === "sidebar" ? (
         <SidebarOrg section={section} setSection={setSection} showSetupCard={showSetupCard} showToolbar={showToolbar} />
